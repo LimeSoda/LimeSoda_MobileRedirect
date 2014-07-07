@@ -4,13 +4,42 @@ Redirects mobile users to a store view you specify.
 
 Facts
 -----
-- version: 0.0.1
+- version: 1.0.0
 - extension key: LimeSoda_MobileRedirect
 - [extension on GitHub](https://github.com/LimeSoda/LimeSoda_MobileRedirect)
 
-Description
+Usage
 -----------
-Redirects mobile users to a store view you specify.
+Install the extension and navigate to `System > Configuration > General > Web > Redirect mobile users`. You can
+deactivate redirections on the store view level.
+
+To configure a redirect switch to the store view configuration level using the "Currenct Configuration Scope"
+dropdown on the top left. A new option `Redirect to Store` will be displayed. Select a store view to or set
+`No redirect` to unset a redirect. 
+
+### How is a mobile browser detected?
+
+We do use the user agents provided by [detectmobilebrowsers.com](http://detectmobilebrowsers.com/).
+If the user agent matches one of the regular expressions the browser will be treated as mobile. The expressions
+should cover both mobile phones and tablets.
+
+Additionally we check if the content type `application/vnd.wap.xhtml+xml` is accepted or one of the headers
+`HTTP_X_WAP_PROFILE` and `HTTP_PROFILE` is set.
+
+### Avoiding infinite loops
+
+As of now there is no automatic detection to avoid infinite loops. If you want to contribute that: great! :-)
+
+Until thenk think through your setup to not create store views which redirect to each other. The only check that
+is implemented is that the store view doesn't redirect to itself.
+
+### Creating "desktop version" / "mobile version" links
+
+You will want to offer your visitors a link which forces a desktop or mobile version to letting the visitors decide
+which version they use.
+
+You do so by adding `force_storeview_selection=1` to a link. This will create a session cookie with the same name.
+As long as the cookie is set to 1 no automatic redirect will happen.
 
 Requirements
 ------------
@@ -20,7 +49,7 @@ Requirements
 
 Compatibility
 -------------
-- Magento CE >= 1.7 (only tested in CE 1.7)
+- Magento CE >= 1.7 (only tested in CE 1.7, may work in newer versions)
 
 Installation Instructions
 -------------------------
@@ -32,11 +61,13 @@ Uninstallation
 
 Support
 -------
-If you have any issues with this extension, open an issue on [GitHub](https://github.com/LimeSoda/LimeSoda_MobileRedirect/issues).
+If you have any issues with this extension, open an issue on
+[GitHub](https://github.com/LimeSoda/LimeSoda_MobileRedirect/issues).
 
 Contribution
 ------------
-Any contribution is highly appreciated. The best way to contribute code is to open a [pull request on GitHub](https://help.github.com/articles/using-pull-requests).
+Any contribution is highly appreciated. The best way to contribute code is to open a
+[pull request on GitHub](https://help.github.com/articles/using-pull-requests).
 
 Developer
 ---------

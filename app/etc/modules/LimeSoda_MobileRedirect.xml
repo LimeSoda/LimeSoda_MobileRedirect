@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <LimeSoda_MobileRedirect>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends></depends>
+        </LimeSoda_MobileRedirect>
+    </modules>
+</config>

@@ -1,0 +1,4 @@
+app/code/community/LimeSoda/MobileRedirect/ app/code/community/LimeSoda/MobileRedirect/
+app/etc/modules/LimeSoda_MobileRedirect.xml app/etc/modules/LimeSoda_MobileRedirect.xml
+app/locale/de_DE/LimeSoda_MobileRedirect/ app/locale/de_DE/LimeSoda_MobileRedirect/
+app/locale/en_US/LimeSoda_MobileRedirect/ app/locale/en_US/LimeSoda_MobileRedirect/
