@@ -14,8 +14,8 @@ Install the extension and navigate to `System > Configuration > General > Web > 
 deactivate redirections on the store view level.
 
 To configure a redirect switch to the store view configuration level using the "Currenct Configuration Scope"
-dropdown on the top left. A new option `Redirect to Store` will be displayed. Select a store view to or set
-`No redirect` to unset a redirect. 
+dropdown on the top left. A new option `Redirect to Store` will be displayed. Select a store view or set
+`No redirect` to disable the redirect. 
 
 ### How is a mobile browser detected?
 
