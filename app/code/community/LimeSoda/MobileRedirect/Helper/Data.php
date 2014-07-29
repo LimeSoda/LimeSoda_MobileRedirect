@@ -102,4 +102,20 @@ class LimeSoda_MobileRedirect_Helper_Data extends Mage_Core_Helper_Abstract
         
         return false;
     }
+    
+    /**
+     * Add or remove the store view forced parameter to/from the Magento request object.
+     * 
+     * @param bool $status
+     * @return void
+     */
+    public function setStoreViewForcedParameter($status)
+    {
+        if ($status === true) {
+            Mage::app()->getRequest()->setQuery(self::FORCE_PARAMETER, '1');
+        } elseif ($status === false) {
+            // Magento doesn't allow us to unset the query parameter / set it to null using setQuery().
+            unset ($_GET[self::FORCE_PARAMETER]);
+        }
+    }
 }
